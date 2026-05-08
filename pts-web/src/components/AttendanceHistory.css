@@ -1,0 +1,65 @@
+.attendance-history .attendance-stat-card.ant-card {
+  border-radius: 16px;
+  border: 1px solid rgba(23, 106, 63, 0.15);
+  box-shadow: 0 10px 24px rgba(13, 78, 45, 0.08);
+  overflow: hidden;
+}
+
+.attendance-history .attendance-stat-card .ant-card-body {
+  padding: 20px;
+}
+
+.attendance-history .attendance-stat-card.total-hours {
+  background: linear-gradient(140deg, #f2f9ff 0%, #e8f5ff 100%);
+}
+
+.attendance-history .attendance-stat-card.working-days {
+  background: linear-gradient(140deg, #f0fff6 0%, #e3f8ea 100%);
+}
+
+.attendance-history .attendance-stat-card.average-hours {
+  background: linear-gradient(140deg, #fffaf0 0%, #fff1d8 100%);
+}
+
+.attendance-history .attendance-stat-card .ant-statistic-title {
+  color: #2b6644;
+  font-weight: 700;
+}
+
+.attendance-history .attendance-filter-card.ant-card,
+.attendance-history .attendance-table-card.ant-card {
+  border-radius: 16px;
+  border: 1px solid rgba(23, 106, 63, 0.15);
+  box-shadow: 0 10px 24px rgba(13, 78, 45, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.attendance-history .attendance-filter-card .ant-card-body {
+  padding: 18px 20px;
+}
+
+.attendance-history .attendance-table-card .ant-card-head {
+  border-bottom: 1px solid rgba(23, 106, 63, 0.12);
+}
+
+.attendance-history .attendance-table-card .ant-card-head-title {
+  color: #145433;
+  font-weight: 800;
+}
+
+.attendance-history .attendance-table-card .ant-card-head-wrapper {
+  position: relative;
+  padding-left: 10px;
+}
+
+.attendance-history .attendance-table-card .ant-card-head-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #0d6b37 0%, #20a058 100%);
+}

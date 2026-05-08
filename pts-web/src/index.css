@@ -1,0 +1,803 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  background: linear-gradient(160deg, #fbf6ef 0%, #f6ede0 45%, #f2e7d8 100%);
+  color: #2f231b;
+}
+
+* {
+  font-family: inherit;
+}
+
+.ant-typography,
+.ant-btn,
+.ant-input,
+.ant-input-password,
+.ant-select,
+.ant-menu,
+.ant-table,
+.ant-form,
+.ant-checkbox-wrapper,
+.ant-message-notice-content {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif !important;
+}
+
+.app-boot-loader {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at 15% 15%, rgba(31, 143, 79, 0.14), transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(240, 177, 0, 0.12), transparent 42%),
+    linear-gradient(160deg, #f7fff9 0%, #edf8f1 46%, #e4f1e8 100%);
+}
+
+.app-boot-loader-card {
+  width: min(92vw, 360px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(23, 106, 63, 0.14);
+  box-shadow: 0 16px 34px rgba(13, 78, 45, 0.12);
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-boot-loader-title.ant-typography {
+  margin-top: 2px;
+  color: #145433;
+  font-weight: 700;
+}
+
+.app-boot-loader-subtitle.ant-typography {
+  color: #5a7d67;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ant-spin .ant-spin-dot-item {
+  background-color: #0d6b37;
+}
+
+.ant-spin.ant-spin-lg .ant-spin-dot {
+  font-size: 24px;
+}
+
+.ant-message {
+  top: 22px;
+}
+
+.ant-message .ant-message-notice-content {
+  border-radius: 12px;
+  padding: 11px 14px;
+  border: 1px solid rgba(23, 106, 63, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 26px rgba(13, 78, 45, 0.14);
+}
+
+.ant-message .ant-message-custom-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1d5034;
+}
+
+.ant-message-success .ant-message-custom-content .anticon {
+  color: #1f8f4f !important;
+}
+
+.ant-message-error .ant-message-custom-content .anticon {
+  color: #cc4638 !important;
+}
+
+.ant-message-warning .ant-message-custom-content .anticon {
+  color: #d9991d !important;
+}
+
+.ant-message-info .ant-message-custom-content .anticon,
+.ant-message-loading .ant-message-custom-content .anticon {
+  color: #2f86c8 !important;
+}
+
+.ant-form-item .ant-form-item-required::before {
+  color: #f4b000 !important;
+  font-size: 16px;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(244, 176, 0, 0.25);
+}
+
+.ant-form-item-label > label {
+  color: #134f2f;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+}
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-number,
+.ant-picker,
+.ant-select-selector,
+.ant-input-textarea textarea {
+  min-height: 40px;
+  border-radius: 10px !important;
+  border: 1px solid #d9e5dd !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover,
+.ant-input-number:hover,
+.ant-picker:hover,
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+.ant-input-textarea textarea:hover {
+  border-color: #a8c9b4 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:focus,
+.ant-input-number-focused,
+.ant-input-number:focus,
+.ant-picker-focused,
+.ant-picker:focus,
+.ant-select-focused .ant-select-selector,
+.ant-input-textarea textarea:focus {
+  border-color: #0d6b37 !important;
+  box-shadow: 0 0 0 2px rgba(13, 107, 55, 0.12) !important;
+}
+
+.ant-input::placeholder,
+.ant-input-password input::placeholder,
+.ant-input-textarea textarea::placeholder {
+  color: #92a89b !important;
+  opacity: 1;
+}
+
+.ant-input-prefix,
+.ant-input-password-icon,
+.ant-picker-suffix,
+.ant-select-arrow {
+  color: #5f8f74 !important;
+}
+
+.restaurant-admin-shell .ant-picker-calendar {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-panel {
+  background: transparent;
+  border-top: none;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-body {
+  padding: 10px 12px;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-content th {
+  color: #2d6b46;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell {
+  padding: 3px 0;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell-inner {
+  border-radius: 10px;
+  transition: all 0.18s ease;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell:hover .ant-picker-cell-inner {
+  background: #edf8f1;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: 1px solid #0d6b37;
+  border-radius: 10px;
+}
+
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.restaurant-admin-shell .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background: linear-gradient(135deg, #0d6b37 0%, #1f8f4f 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(13, 107, 55, 0.2);
+}
+
+.ant-picker-dropdown .ant-picker-panel-container {
+  border-radius: 14px;
+  border: 1px solid rgba(23, 106, 63, 0.18);
+  box-shadow: 0 14px 30px rgba(13, 78, 45, 0.14);
+  overflow: hidden;
+}
+
+.ant-picker-dropdown .ant-picker-header {
+  background: #f3fbf6;
+  border-bottom: 1px solid rgba(23, 106, 63, 0.1);
+}
+
+.ant-picker-dropdown .ant-picker-content th {
+  color: #2d6b46;
+  font-weight: 700;
+}
+
+.ant-picker-dropdown .ant-picker-cell-inner {
+  border-radius: 9px;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: 1px solid #0d6b37;
+  border-radius: 9px;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background: linear-gradient(135deg, #0d6b37 0%, #1f8f4f 100%);
+}
+
+.restaurant-admin-shell .ant-card {
+  border-radius: 14px;
+  border: 1px solid rgba(25, 113, 67, 0.16);
+  box-shadow: 0 10px 24px rgba(16, 78, 46, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.restaurant-admin-shell .ant-table-thead > tr > th {
+  background: #ecf8f0;
+  color: #134f2f;
+  font-weight: 600;
+}
+
+.restaurant-admin-shell .ant-table-tbody > tr:hover > td {
+  background: #f4fbf6 !important;
+}
+
+.restaurant-admin-shell .ant-btn-primary {
+  background: linear-gradient(90deg, #0d6b37 0%, #1f8f4f 100%);
+  border: none;
+  box-shadow: 0 8px 20px rgba(13, 107, 55, 0.22);
+}
+
+.restaurant-admin-shell .ant-btn-primary:hover,
+.restaurant-admin-shell .ant-btn-primary:focus {
+  background: linear-gradient(90deg, #0f7b3f 0%, #23a45b 100%);
+}
+
+.restaurant-admin-shell .modern-admin-header {
+  backdrop-filter: blur(12px);
+}
+
+.restaurant-admin-shell .modern-admin-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.restaurant-admin-shell .modern-admin-right {
+  flex-shrink: 0;
+}
+
+.modern-admin-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(247, 255, 251, 0.95);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.modern-admin-brand:hover {
+  color: #ffffff;
+}
+
+.modern-admin-brand-text {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.modern-admin-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modern-admin-brand-subtext {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 255, 249, 0.75);
+  line-height: 1;
+}
+
+.modern-admin-brand-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #ffd874 0%, #f0b100 100%);
+  box-shadow: 0 0 14px rgba(246, 180, 14, 0.5);
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.restaurant-admin-shell .modern-admin-nav-desktop {
+  flex: 1;
+  min-width: 0;
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item,
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-submenu {
+  margin-inline: 2px;
+  border-radius: 999px;
+  color: rgba(245, 255, 249, 0.92);
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  height: 40px;
+  line-height: 40px;
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item a {
+  color: inherit;
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item-selected {
+  background: #ffffff;
+  color: #0d6b37;
+  box-shadow: 0 6px 14px rgba(13, 107, 55, 0.24);
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: #0d6b37 !important;
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal::after {
+  border-bottom: none !important;
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item::after,
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-submenu::after {
+  border-bottom: none !important;
+}
+
+.modern-admin-mobile-menu-btn.ant-btn {
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-item:hover,
+.restaurant-admin-shell .modern-admin-nav.ant-menu-horizontal > .ant-menu-submenu:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.restaurant-admin-shell .modern-admin-drawer .ant-drawer-header {
+  border-bottom: 1px solid rgba(25, 113, 67, 0.16);
+}
+
+@media (max-width: 1200px) {
+  .modern-admin-brand-text {
+    font-size: 17px;
+  }
+}
+
+.modern-theme-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(247, 221, 144, 0.38);
+}
+
+.modern-theme-toggle-wrap .toggle-label {
+  font-size: 12px;
+  color: rgba(247, 255, 251, 0.78);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.modern-theme-toggle-wrap .toggle-label.active {
+  color: #ffffff;
+}
+
+.modern-theme-toggle.ant-switch {
+  background: rgba(250, 250, 250, 0.35);
+  min-width: 50px;
+  height: 26px;
+  line-height: 26px;
+}
+
+.modern-theme-toggle.ant-switch .ant-switch-handle {
+  top: 3px;
+}
+
+.modern-theme-toggle.ant-switch .ant-switch-handle::before {
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(69, 44, 28, 0.32);
+}
+
+.modern-theme-toggle.ant-switch.ant-switch-checked {
+  background: linear-gradient(90deg, #0d6b37 0%, #1f8f4f 100%);
+}
+
+.bestone-profile-menu .ant-dropdown-menu {
+  min-width: 230px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(23, 106, 63, 0.16);
+  box-shadow: 0 14px 32px rgba(13, 78, 45, 0.16);
+  background: linear-gradient(180deg, #ffffff 0%, #f5fbf7 100%);
+}
+
+.bestone-profile-menu .ant-dropdown-menu-item,
+.bestone-profile-menu .ant-dropdown-menu-submenu-title {
+  border-radius: 10px;
+  margin: 2px 0;
+  padding: 10px 12px;
+  font-weight: 700;
+  color: #174f32;
+  transition: all 0.18s ease;
+}
+
+.bestone-profile-menu .ant-dropdown-menu-item .anticon,
+.bestone-profile-menu .ant-dropdown-menu-submenu-title .anticon {
+  color: #0f7d40;
+  font-size: 15px;
+}
+
+.bestone-profile-menu .ant-dropdown-menu-item:hover,
+.bestone-profile-menu .ant-dropdown-menu-submenu-title:hover {
+  background: #eaf7ef;
+  color: #0d6b37;
+}
+
+.bestone-profile-menu .ant-dropdown-menu-item-divider {
+  margin: 8px 2px;
+  background: rgba(23, 106, 63, 0.12);
+}
+
+.bestone-profile-menu-list .ant-dropdown-menu-item:last-child {
+  color: #b43a31;
+}
+
+.bestone-profile-menu-list .ant-dropdown-menu-item:last-child .anticon {
+  color: #b43a31;
+}
+
+.modern-admin-footer.ant-layout-footer {
+  margin: 8px 16px 16px;
+  border-radius: 14px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+}
+
+.modern-admin-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.modern-admin-footer-left,
+.modern-admin-footer-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.modern-admin-footer-left .footer-brand {
+  font-size: 13px;
+  font-weight: 800;
+  color: #145433;
+}
+
+.modern-admin-footer-left .footer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f0b100;
+  box-shadow: 0 0 8px rgba(240, 177, 0, 0.45);
+}
+
+.modern-admin-footer-left .footer-tag {
+  color: #2f7a52;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+.modern-admin-footer-right .footer-sep {
+  opacity: 0.35;
+}
+
+@media (max-width: 768px) {
+  .modern-admin-footer.ant-layout-footer {
+    padding: 10px 12px;
+  }
+
+  .modern-admin-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Dark mode consistency overrides */
+.restaurant-admin-shell.dark-mode .ant-card {
+  background: rgba(28, 32, 30, 0.94) !important;
+  border-color: rgba(90, 110, 98, 0.35) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-typography,
+.restaurant-admin-shell.dark-mode .ant-card-head-title,
+.restaurant-admin-shell.dark-mode .ant-form-item-label > label {
+  color: rgba(235, 243, 239, 0.9) !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-table-thead > tr > th {
+  background: #243129 !important;
+  color: #d8e8df !important;
+  border-bottom-color: #35463b !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-table-tbody > tr > td {
+  background: rgba(22, 28, 25, 0.82);
+  color: #d6e3dc;
+  border-bottom-color: #2f3d34;
+}
+
+.restaurant-admin-shell.dark-mode .ant-table-tbody > tr:hover > td {
+  background: rgba(49, 64, 56, 0.82) !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-input,
+.restaurant-admin-shell.dark-mode .ant-input-affix-wrapper,
+.restaurant-admin-shell.dark-mode .ant-input-number,
+.restaurant-admin-shell.dark-mode .ant-picker,
+.restaurant-admin-shell.dark-mode .ant-select-selector,
+.restaurant-admin-shell.dark-mode .ant-input-textarea textarea {
+  background: #202925 !important;
+  border-color: #3c4e43 !important;
+  color: #e2ebe6 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-input::placeholder,
+.restaurant-admin-shell.dark-mode .ant-input-password input::placeholder,
+.restaurant-admin-shell.dark-mode .ant-input-textarea textarea::placeholder {
+  color: #92a69a !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-select-selection-item,
+.restaurant-admin-shell.dark-mode .ant-select-selection-placeholder,
+.restaurant-admin-shell.dark-mode .ant-picker-input > input {
+  color: #dce8e2 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-btn-default {
+  background: #27332d;
+  border-color: #3a4b41;
+  color: #dbe8e2;
+}
+
+.restaurant-admin-shell.dark-mode .ant-modal-content,
+.restaurant-admin-shell.dark-mode .ant-drawer-content {
+  background: #1f2723 !important;
+  color: #dce7e1 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-modal-header,
+.restaurant-admin-shell.dark-mode .ant-drawer-header {
+  background: #1f2723 !important;
+  border-bottom-color: #33443a !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-modal-title,
+.restaurant-admin-shell.dark-mode .ant-drawer-title {
+  color: #e2ece6 !important;
+}
+
+.restaurant-admin-shell.dark-mode .shared-page-banner,
+.restaurant-admin-shell.dark-mode .leave-hero,
+.restaurant-admin-shell.dark-mode .dashboard-hero {
+  background: linear-gradient(118deg, #1f3026 0%, #294033 55%, #335144 100%) !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.34) !important;
+}
+
+.restaurant-admin-shell.dark-mode .dashboard-chart-wrap {
+  background: #222c27 !important;
+  border-color: #385046 !important;
+}
+
+.restaurant-admin-shell.dark-mode .status-chip {
+  background: #232f29 !important;
+  border-color: #3a4d43 !important;
+}
+
+.restaurant-admin-shell.dark-mode .status-chip.warning {
+  background: #3a3222 !important;
+  border-color: #6a5935 !important;
+}
+
+.restaurant-admin-shell.dark-mode .status-chip.danger {
+  background: #3b2727 !important;
+  border-color: #6a3f3f !important;
+}
+
+.restaurant-admin-shell.dark-mode .status-chip.success {
+  background: #223228 !important;
+  border-color: #355544 !important;
+}
+
+.restaurant-admin-shell.dark-mode .modern-admin-footer-left .footer-brand,
+.restaurant-admin-shell.dark-mode .modern-admin-footer-left .footer-tag,
+.restaurant-admin-shell.dark-mode .modern-admin-footer-right {
+  color: #d4e2db !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar {
+  background: #202925 !important;
+  border: 1px solid #36473d;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-calendar-header {
+  background: #232f29 !important;
+  border-bottom-color: #3b4d43 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-content th {
+  color: #cdded5 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell {
+  color: #c9d8d0 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view {
+  color: #dbe8e2 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell:hover .ant-picker-cell-inner {
+  background: #2f3f36 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: #67b389 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background: linear-gradient(135deg, #2c7a4c 0%, #3f9c65 100%) !important;
+  color: #f4faf7 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+  background: rgba(63, 156, 101, 0.20) !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-panel-container {
+  background: #1f2723 !important;
+  border-color: #3b4d43 !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-header {
+  background: #233029 !important;
+  border-bottom-color: #3a4d42 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-header button,
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-header-view {
+  color: #d7e6de !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-content th {
+  color: #c7d8cf !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell {
+  color: #b2c6bb !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell-in-view {
+  color: #dce8e2 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell:hover .ant-picker-cell-inner {
+  background: #2d3e35 !important;
+}
+
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.restaurant-admin-shell.dark-mode .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background: linear-gradient(135deg, #2c7a4c 0%, #3f9c65 100%) !important;
+  color: #f4faf7 !important;
+}
+
+/* Global responsive behavior */
+.restaurant-admin-shell .ant-table-wrapper {
+  width: 100%;
+}
+
+.restaurant-admin-shell .ant-table-wrapper .ant-table-container {
+  overflow-x: auto;
+}
+
+@media (max-width: 992px) {
+  .restaurant-admin-shell .ant-table {
+    min-width: 760px;
+  }
+
+  .restaurant-admin-shell .ant-form-item {
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-admin-shell .modern-admin-header {
+    height: auto !important;
+    min-height: 70px;
+    padding: 10px 12px !important;
+  }
+
+  .restaurant-admin-shell .modern-admin-left {
+    gap: 10px;
+  }
+
+  .restaurant-admin-shell .modern-admin-content {
+    border-radius: 12px !important;
+  }
+
+  .ant-modal {
+    max-width: calc(100vw - 20px) !important;
+    margin: 10px auto !important;
+  }
+
+  .ant-modal .ant-modal-content {
+    border-radius: 12px;
+  }
+
+  .ant-drawer-content-wrapper {
+    width: min(100vw, 100%) !important;
+    max-width: 100vw !important;
+  }
+
+  .ant-card .ant-card-body {
+    padding: 14px;
+  }
+}
