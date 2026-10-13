@@ -1,15 +1,33 @@
 const bcrypt = require('bcryptjs');
-const { User, Department } = require('../models');
+const { User, Department, Role } = require('../models');
+
+const ensureRole = async (role) => {
+  if (typeof role !== 'string' || !role.trim()) {
+    const error = new Error('Role is required');
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const match = await Role.findOne({ where: { name: role } });
+  if (!match) {
+    const error = new Error('Selected role is not available');
+    error.statusCode = 400;
+    throw error;
+  }
+
+  return match.name;
+};
 
 const createUser = async (req, res) => {
   try {
     const { password, ...rest } = req.body;
+    rest.role = await ensureRole(rest.role);
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({ ...rest, password: hashedPassword });
     res.status(201).json(user);
   } catch (err) {
-    res.status(500).json({ message: 'User creation failed', error: err.message });
+    res.status(err.statusCode || 500).json({ message: err.statusCode ? err.message : 'User creation failed', error: err.message });
   }
 };
 
@@ -36,6 +54,10 @@ const updateUser = async (req, res) => {
       console.log('Base64 part length:', base64Part.length, 'characters');
     }
 
+    if (Object.prototype.hasOwnProperty.call(updates, 'role')) {
+      updates.role = await ensureRole(updates.role);
+    }
+
     if (updates.password) {
       updates.password = await bcrypt.hash(updates.password, 10);
     }
@@ -51,7 +73,7 @@ const updateUser = async (req, res) => {
     res.json({ success: true, data: updatedUser });
   } catch (err) {
     console.error('User update error:', err);
-    res.status(500).json({ message: 'User update failed', error: err.message });
+    res.status(err.statusCode || 500).json({ message: err.statusCode ? err.message : 'User update failed', error: err.message });
   }
 };
 

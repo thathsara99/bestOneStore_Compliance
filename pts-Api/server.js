@@ -35,6 +35,13 @@ db.sequelize.sync({ force: false })
       });
       console.log('🧩 Added employees.visaRenewalRequested column');
     }
+
+    const [roleColumns] = await db.sequelize.query("SHOW COLUMNS FROM users LIKE 'role'");
+    const roleType = roleColumns[0] && String(roleColumns[0].Type || '');
+    if (roleType.toLowerCase().startsWith('enum')) {
+      await db.sequelize.query('ALTER TABLE users MODIFY COLUMN role VARCHAR(100) NOT NULL');
+      console.log('🧩 Updated users.role to accept role names from the roles table');
+    }
     console.log('🛠️ Database synced!');
   })
   .catch(err => {

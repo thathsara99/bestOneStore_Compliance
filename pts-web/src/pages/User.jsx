@@ -122,9 +122,10 @@ const UserManagementPage = () => {
 
   const showDrawer = (record = null) => {
     if (record) {
+      const { password, ...rest } = record;
       const formData = {
-        ...record,
-        dob: dayjs(record.dob),
+        ...rest,
+        dob: rest.dob ? dayjs(rest.dob) : null,
       };
       form.setFieldsValue(formData);
       setEditingId(record.key);
@@ -160,7 +161,7 @@ const UserManagementPage = () => {
             email: formattedValues.email,
             departmentId: departments.find(dep => dep.name === formattedValues.department)?.id || null,
             status: formattedValues.status,
-            password: formattedValues.password // Only update if provided
+            ...(formattedValues.password ? { password: formattedValues.password } : {}),
           }),
         });
         const result = await res.json();
@@ -431,7 +432,11 @@ const UserManagementPage = () => {
           <Form.Item name="email" label="Email" rules={[{ required: true, type: 'email' }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="password" label="Password" rules={[{ required: true }]}>
+          <Form.Item
+            name="password"
+            label={editingId ? 'Password (leave blank to keep current)' : 'Password'}
+            rules={editingId ? [] : [{ required: true }]}
+          >
             <Input.Password />
           </Form.Item>
           <Form.Item name="status" label="Status" valuePropName="checked">

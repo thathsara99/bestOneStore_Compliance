@@ -161,8 +161,8 @@ const EmployeeManagementPage = () => {
       const result = await res.json();
       if (res.ok && result.data) {
         // Filter out System Admin and Company Admin users
-        const filteredUsers = result.data.filter(user => 
-          user.role !== 'System Admin' && user.role !== 'Company Admin'
+        const filteredUsers = result.data.filter(user =>
+          !['System Admin', 'Company Admin', 'Super Admin'].includes(user.role)
         );
         setAvailableUsers(filteredUsers);
       }
